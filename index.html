@@ -1,12 +1,14 @@
-html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nước giặt Comfort - Mềm thơm cho bé yêu</title>
+<title>Nước giặt Comfort - Trịnh Xuân Thao (ThaoTX)</title>
 
 <style>
+/* Hiệu ứng cuộn mượt */
+html {scroll-behavior: smooth;}
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#fff;color:#333;line-height:1.6}
 .container{max-width:1100px;margin:auto;padding:20px}
@@ -21,7 +23,7 @@ color:#fff;text-align:center;padding:60px 20px
 .btn{
 display:inline-block;background:#ff3366;color:#fff;
 padding:12px 25px;border-radius:30px;text-decoration:none;
-font-weight:bold;transition:0.3s
+font-weight:bold;transition:0.3s;border:none;cursor:pointer
 }
 .btn:hover{background:#e6004c;transform:scale(1.05)}
 
@@ -43,7 +45,7 @@ transition:0.3s
 }
 .card:hover{transform:translateY(-5px)}
 
-img{max-width:100%;border-radius:10px}
+img{max-width:100%;border-radius:10px;height:auto}
 
 /* PROMO */
 .promo{
@@ -60,8 +62,9 @@ border-radius:8px;border:1px solid #ccc
 /* FOOTER */
 footer{
 background:#333;color:#fff;text-align:center;
-padding:20px;font-size:14px
+padding:30px 20px;font-size:14px;border-top: 5px solid #ff3366;
 }
+footer b{color:#ff9ad5; font-size: 16px;}
 
 /* ANIMATION */
 .fade-in{
@@ -79,9 +82,9 @@ to{opacity:1;transform:translateY(0)}
 <!-- HERO -->
 <section class="hero">
 <div class="container">
-<h1>✨ Quần Áo Thơm Mềm Như Ôm Bé Yêu ✨</h1>
+<h1>✨ Quần Áo Thơm Mềm TRỊNH XUÂN THAO ✨</h1>
 <p>Nước giặt xả 2in1 Comfort – Mẹ nhàn hơn, bé thơm hơn cả ngày</p>
-<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Nước giặt Comfort ThaoTX">
 <br><br>
 <a href="#form" class="btn">MUA NGAY</a>
 </div>
@@ -108,32 +111,11 @@ to{opacity:1;transform:translateY(0)}
 </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="section fade-in">
-<h2>Lợi ích mẹ nào cũng thích 👍</h2>
-<div class="grid">
-<div class="card">💐 Hương thơm dài lâu</div>
-<div class="card">💰 Tiết kiệm vì 2in1</div>
-<div class="card">👶 An toàn cho cả gia đình</div>
-</div>
-</section>
-
 <!-- PRODUCT -->
 <section class="section fade-in">
-<h2>Sản phẩm nổi bật</h2>
-<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1">
+<h2>Sản phẩm nổi bật từ ThaoTX</h2>
+<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1" alt="Sản phẩm ThaoTX" loading="lazy">
 <p>Nước giặt Comfort 2in1 – Giặt sạch + xả mềm chỉ trong 1 bước</p>
-</section>
-
-<!-- SOCIAL -->
-<section class="section fade-in">
-<h2>Mẹ bỉm nói gì? ⭐⭐⭐⭐⭐</h2>
-<div class="grid">
-<div class="card">“Thơm cực lâu, bé mặc thích lắm!”</div>
-<div class="card">“Không cần xả riêng, tiết kiệm hẳn”</div>
-<div class="card">“Da bé không bị kích ứng 👍”</div>
-</div>
-<p>🔥 Đã bán hơn 25.000 sản phẩm</p>
 </section>
 
 <!-- PROMO -->
@@ -147,22 +129,31 @@ to{opacity:1;transform:translateY(0)}
 </div>
 </section>
 
-<!-- FORM -->
+<!-- FORM (Dành cho Vercel - Gửi về email của bạn) -->
 <section class="section fade-in" id="form">
 <h2>Đặt hàng ngay</h2>
-<form>
-<input type="text" placeholder="Họ và tên">
-<input type="tel" placeholder="Số điện thoại">
-<textarea placeholder="Địa chỉ"></textarea>
-<button class="btn">GỬI ĐƠN</button>
+<p>Thông tin của bạn sẽ được gửi trực tiếp tới ThaoTX</p>
+<form action="https://formspree.io/f/xanypjne" method="POST">
+<input type="text" name="name" placeholder="Họ và tên của bạn" required>
+<input type="tel" name="phone" placeholder="Số điện thoại liên hệ" required>
+<textarea name="address" placeholder="Địa chỉ nhận hàng (Gia Bình, Bắc Ninh hoặc các tỉnh khác...)" required></textarea>
+<!-- Trường ẩn để bạn biết đơn hàng từ trang web nào -->
+<input type="hidden" name="_subject" value="Đơn hàng mới từ Landing Page Comfort">
+<button type="submit" class="btn">XÁC NHẬN ĐẶT HÀNG</button>
 </form>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER CHÍNH THỨC -->
 <footer>
-<p>© 2026 Comfort Việt Nam</p>
-<p>Hotline: 0909 999 999</p>
-<p>Chính sách | Bảo mật</p>
+<div class="container">
+<p><b>CÔNG TY: THAOTX</b></p>
+<p>Đại diện: <strong>Trịnh Xuân Thao</strong></p>
+<p>Địa chỉ: Gia Bình - Bắc Ninh</p>
+<p>Hotline: <strong>0962648352</strong></p>
+<p>Email: thaotx0206@gmail.com</p>
+<br>
+<p>© 2026 Bản quyền thuộc về Trịnh Xuân Thao - ThaoTX</p>
+</div>
 </footer>
 
 </body>
